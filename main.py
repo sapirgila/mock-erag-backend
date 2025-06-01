@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+import user_service
 
 app = FastAPI()
 
@@ -17,7 +18,7 @@ def list_users():
 
 @app.post("/users")
 def create_user():
-    return JSONResponse(content={"message": "User created (dummy)"}, status_code=201)
+    return user_service.UserService().create_user("dummy_id", {"name":
 
 @app.get("/items/{item_id}")
 def get_item(item_id: int):
