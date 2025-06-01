@@ -18,7 +18,7 @@ def list_users():
 
 @app.post("/users")
 def create_user():
-    return user_service.UserService().create_user("dummy_id", {"name":
+    return user_service.UserService().create_user("dummy_id", {"name": "Dummy User"})
 
 @app.get("/items/{item_id}")
 def get_item(item_id: int):
